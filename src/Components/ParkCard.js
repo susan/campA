@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from "semantic-ui-react";
+import { Card, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default class ParkCard extends Component {
@@ -18,10 +18,7 @@ export default class ParkCard extends Component {
       <Card.Header className= "card">
        <img className = "img" alt="" src={img1_url} />
        <p> {full_name} </p>
-       <Link to="/campgroundParkList">
-      <p onClick={this.campgroundHandler}>  Campgrounds </p>
-       </Link>
-
+      <Button onClick={this.campgroundHandler}>  Show Campgrounds </Button>
      </Card.Header >
       </div>
 
