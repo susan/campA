@@ -3,6 +3,7 @@ import React from "react";
 class SignupForm extends React.Component {
   state = {
     signupUsername: "",
+    signupUserEmail: "",
     signupPassword: "",
   };
 
@@ -25,6 +26,13 @@ class SignupForm extends React.Component {
             value={this.state.signupUsername}
             onChange={this.handleChange}
           />
+         <input
+            type="text"
+            name="signupUserEmail"
+            placeholder="email"
+            value={this.state.signupUserEmail}
+            onChange={this.handleChange}
+          />
           <input
             type="text"
             name="signupPassword"
@@ -32,7 +40,7 @@ class SignupForm extends React.Component {
             value={this.state.signupPassword}
             onChange={this.handleChange}
           />
-          <button>Sign Up</button>
+          <button>Register</button>
         </form>
       </div>
     );

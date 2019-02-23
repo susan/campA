@@ -3,6 +3,7 @@ import React from "react";
 class LoginForm extends React.Component {
   state = {
     loginUsername: "",
+    loginUserEmail: '',
     loginPassword: "",
   };
 
@@ -25,6 +26,15 @@ class LoginForm extends React.Component {
             value={this.state.loginUsername}
             onChange={this.handleChange}
           />
+
+          <input
+            type="text"
+            name="loginUserEmail"
+            placeholder="email"
+            value={this.state.loginUserEmail}
+            onChange={this.handleChange}
+          />
+
           <input
             type="text"
             name="loginPassword"
@@ -32,7 +42,7 @@ class LoginForm extends React.Component {
             value={this.state.loginPassword}
             onChange={this.handleChange}
           />
-          <button>Sign Up</button>
+          <button>Log In</button>
         </form>
       </div>
     );
