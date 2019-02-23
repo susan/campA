@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 export default class ParkCard extends Component {
 
   campgroundHandler = () =>{
-    return this.props.createCampgrounds(this.props.park.campgrounds)
+    return this.props.createCampgrounds(this.props.park.campgrounds, this.props.park.name)
   }
 
   render() {
-  	console.log("pcard props are", this.props)
+  	//console.log("pcard props are", this.props)
   	const {img1_url, full_name} = this.props.park
 
     return (

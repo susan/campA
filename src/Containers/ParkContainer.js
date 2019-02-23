@@ -8,21 +8,18 @@ export default class ParkContainer extends Component {
 
 	state= {
 		parkCampgroundList: [],
+		name: "",
 	}
 
-  createCampgrounds = (campgroundArray) => {
+  createCampgrounds = (campgroundArray, name) => {
       //console.log("does this work")
       return this.setState({
-        parkCampgroundList: campgroundArray
+        parkCampgroundList: campgroundArray,
+        name: name
       })
      }
 
-
-
-
   render() {
-
-
 
     return (
     	<>
@@ -34,14 +31,14 @@ export default class ParkContainer extends Component {
     	   <Route
        path= "/parks"
        render = {()=> (
-         this.props.parks.map(park=>{
+         this.props.parks.map(park=> {
     		   return <ParkCard key={park.id} park = {park} createCampgrounds={this.createCampgrounds}/>
     	   })
        )}
      />
        <Route
        path="/campgroundlist"
-       render = {()=> (
+       render = {(props)=> (
        <CampgroundParkList campgrounds= {this.state.parkCampgroundList}/>
        )}
        />

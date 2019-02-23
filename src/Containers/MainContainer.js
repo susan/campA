@@ -51,7 +51,7 @@ class MainContainer extends Component {
         <Route
            path="/"
             render={() => (
-           <Home />
+           <p> Main page has a few park cards on page </p>
 
           )}
         />
