@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from "./Components/NavBar.js"
-import MainContainer from "./Containers/MainContainer.js"
+import MainContainer from "./Containers/MainContainer.js";
 import logo from './logo.svg';
 import './App.css';
 

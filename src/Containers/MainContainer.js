@@ -4,45 +4,57 @@ import Home from "../Components/Home"
 import ParkContainer from "./ParkContainer.js"
 import CampgroundContainer from "./CampgroundContainer.js"
 
-const parkURL = "http://localhost:3000/api/v1/parks"
+
+const photoURL = "http://localhost:3000/api/v1/photos"
+
 class MainContainer extends Component {
+
   state = {
   	parks: [],
+    campgrounds: [],
   }
+
   componentDidMount() {
-    fetch(parkURL)
+    this.fetchByEndpoint('parks')
+    this.fetchByEndpoint('campgrounds')
+   }
+
+  fetchByEndpoint (endpoint) {
+    fetch(`http://localhost:3000/api/v1/${endpoint}`)
     .then(resp => resp.json())
-    .then(parks => {
+    .then(data => {
        this.setState ({
-         parks: parks,
+         [endpoint]: data,
        }, () => console.log(this.state))
-     })
+    })
   }
 
 
 
   render() {
     return (
-      <div>
-        <Route
-           path="/"
-            render={() => (
-           <Home />
-        )}
-        />
+       <div>
       <Switch>
          <Route
-           path="Parks"
+           path="/parks"
            render={() => (
            <ParkContainer parks={this.state.parks} />
          )}
          />
          <Route
-           path="Campgrounds"
+           path="/campgrounds"
            render={() => (
-           <CampgroundContainer />
+           <CampgroundContainer campgrounds={this.state.campgrounds} />
          )}
          />
+
+        <Route
+           path="/"
+            render={() => (
+           <Home />
+
+          )}
+        />
          </Switch>
       </div>
     );
